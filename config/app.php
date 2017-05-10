@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 		Recca0120\LaravelTracy\LaravelTracyServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
+		Mews\Purifier\PurifierServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -217,6 +218,7 @@ return [
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
+		'Purifier' => Mews\Purifier\Facades\Purifier::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
