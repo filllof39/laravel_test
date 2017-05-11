@@ -9,8 +9,12 @@ class Role extends Model
 	protected $fillable = ['slug'];
     public $timestamps = false;
 	
-		public function users()
+    /**
+    * Свзяь «многие ко многим»
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    */
+    public function users()
     {
-        return $this->belongsToMany('App\Models\User');
+        return $this->belongsToMany(User::class);
     }
 }

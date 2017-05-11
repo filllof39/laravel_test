@@ -21,4 +21,13 @@ class News extends Model
 	public function getMarkdownContentAttribute() {
 	    return (new Parsedown)->text($this->attributes['content']);
 	}
+	
+	/**
+    * Обратное отношение «один ко многим»
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

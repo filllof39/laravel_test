@@ -27,8 +27,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 	
-	    public function roles()
+	/**
+    * Связь «один ко многим»
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+    public function news()
     {
-        return $this->belongsToMany('App\Models\Role');
+        return $this->hasMany(News::class);
+    }
+	  
+	/**
+    * Связь «многие ко многим»
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }
